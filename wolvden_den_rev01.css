@@ -1,0 +1,384 @@
+/*
+---------------------------------------------------------
+GLOBAL CUSTOMIZATION
+---------------------------------------------------------
+*/
+    
+/* Put your background image in here. */
+body {
+	background-image:url("https://i.imgur.com/zGTbiQH.png")!important;
+	background-position: center;
+    }
+
+/* This can potentially impact a lot of things, but I only did font. Changes all fonts
+   on the page except the header (done elsewhere).
+   "small" selects the footnotes for your wolves. To manipulate this text separately,
+   you'd need to create a new block for "small". */
+div#main, small {
+    color: #bebebe; /* bebe.....son,,, */
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    
+    }
+
+/* Change the color of hyperlinks.
+   "a *" and "a" are selectors for a lot of links..
+   "th.pt-1.pb-1 a" edits the color of the link for your lead wolf in the pack info table.
+   "div.floatright a" targets the links in your Den tables (where all your wolves are!).
+   You could definitely break out each selector into their own blocks to customize link
+   colors independently, but I wanted everything uniform.
+   DOES NOT impact the chatbox whatsoever. */
+a *, a, th.pt-1.pb-1 a, div.floatright a {
+	color: rgb(219, 219, 219);
+	font-weight: bold;
+    }
+    
+/* Changes behavior of link hovers.
+   !important is necessary for this to function.*/
+a *:hover, a:hover {
+	color: rgb(255, 255, 255) !important;
+	font-weight: bold;
+    text-decoration: underline;
+    }
+
+/* Increases the color saturation of ALL images on a page.
+   I felt this was necessary to help my wolves stand out in my monochrome layout,
+   it may not always be necessary to use! But it sure is fun! */
+img {
+    filter: saturate(140%); /* Adjust the percentage to increase or decrease saturation */
+    }
+    
+/* Saturate buttons. I couldn't get this to touch the chat buttons. */
+.btn {
+    margin-top: 10px;
+    filter: saturate(65%);
+    }
+    
+/*
+---------------------------------------------------------
+HEADER CUSTOMIZATION
+---------------------------------------------------------
+*/
+
+/* Selects the header for customization. */
+div#header.container {
+    font-family: 'Century Gothic';
+    }
+    
+/* Changes the background of the navigation menu, hamburger menu, and footer. */
+#header .navbar-main, #footer {
+ background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Changes the behavior of the link hover effect in the hamburger menu. */
+#header .navbar-main .nav-link:hover .fa, #footer a:hover, #footer nav .nav-item .nav-link:hover {
+	color: rgba(240, 240, 240, 1);
+}
+
+/* Selects the header container. This is useful for adding borders, changing
+   the background, etc. */
+div#header.container {
+    background-color: rgba(0, 0, 0, 0);
+    }
+
+/* Change the label colors in the navigation bar. Impacts hamburger menu as well. */
+#header .navbar-main .nav-link, #header .navbar-main .nav-link .fa {
+	color: rgb(193, 193, 193);
+    }
+
+/* Changes the bookmark icon. I had trouble combining this block with other blocks,
+   so might need to investigate the bookmark selector.
+   !important is necessary for this to function. */
+#bookmarkPage.fas.fa-bookmark.text-danger {
+    color: rgb(193, 193, 193) !important;
+    }
+    
+/* "Welcome back, [user]" bar.
+    !important is necessary for this to function. */
+.navbar-status {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    color: rgb(193, 193, 193) !important;
+    }
+    
+/* Changes the Home / [user] / [pack name] background color. */
+#header .breadcrumb-nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    }
+
+/* Changes the color of your current location in the breadcrumb,
+    ie. Home / [user] / [pack name] <-- pack name will be impacted
+    by this code when you are at that location. */
+.breadcrumb-item.active {
+	color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    }
+    
+/* Changes the right side of the header breadcrumb.
+   Good place for writing credits, a quote, etc. */
+#header .breadcrumb::after {
+    content:'stinky rhuik......';
+    position:absolute;
+    right:35px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    }
+    
+/*
+---------------------------------------------------------
+MAIN CONTENT CUSTOMIZATION
+---------------------------------------------------------
+*/  
+    
+/* Changes the background of the main "body" container. Very important. */
+#main {
+    background-color: rgba(0, 0, 0, 0.5);    
+    }
+    
+
+    
+/* Changes the page alerts, ie. returned scouts, hunts, herbalist, etc. */
+.alert {
+    border: solid 1px rgb(0, 0, 0);
+    background-color: rgba(61, 195, 70, .3);
+    }
+    
+/* Specifically changes the "Your puppies are FUCKING DYING!" alert, cause I
+   wanted it to be red. */
+div.alert.alert-danger.text-center {
+    background-color: rgba(195, 61, 61, .3);
+    }
+
+/* Changes how the pack title is displayed. */
+h1 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Arial';
+	color: rgba(255, 255, 255, 1);
+	}
+    
+/*
+---------------------------------------------------------
+TABS ABOVE PACK INFO TABLE
+---------------------------------------------------------
+
+This gets its own special section because it's kinda screwy.
+The following lines all deal with the tabs, and some of them are absolutely
+necessary for the tabs to appear centered on the page. Really, don't mess
+with anything that "assists with centering" unless you want the whole
+alignment of the tabs to fuck right off somewhere else. */
+    
+/* Assists with centering... */
+div#main.col-lg-9.order-lg-2 ul.nav.nav-tabs {
+    display: table;
+    margin: 0 auto;
+    }
+
+/* Assists with centering... */
+.nav > li:nth-child(1) {
+    float: left;
+    }
+
+/* Assists with centering... */
+.nav > li:nth-child(2) {
+    float: right;
+    }
+
+/* Customizes the tabs, ie. background color, border, and whatever else you want. */
+ul.nav.nav-tabs li.nav-item, ul.nav.nav-tabs li.nav-item a.nav-link.active {
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px rgb(138, 138, 138);
+    }
+    
+/*
+---------------------------------------------------------
+LEAD WOLF IMG (INCLUDING SIDEBAR IMG), FEATURED WOLF, AND PACK STATS TABLE
+---------------------------------------------------------
+*/
+    
+/* Can be used to edit the background of the Lead Wolf, Featured Wolf, and Pack Stats table. BUT.
+   BUT.
+   This "table" is also part of your pack wolves' table. Meaning you can edit this part of the table
+   and any edits (re: opacity) you make to this table will be OVERLAPPED by the edits you make to your
+   pack wolves' table. Kind of like this: "Element A = 1" and "Element B = 1" therefore "Element A = 2"
+   it's not a huge problem unless you're dealing with opacity because two overlapping opaque colors
+   create a whole newass opaqueness. Still a headache. */
+div#main.col-lg-9.order-lg-2 table.table.table-striped.border-none.mt-3.mb-0 tbody tr {
+    background-color: rgba(137, 137, 137, .3);
+    text-align: center;
+    }
+    
+/* Targets the [title][leader] bar.
+    Same deal as above; very fucky. */
+th.pt-1.pb-1 {
+    background-color: #00000080 !important;
+    }
+    
+/* Removes the colored background that appears when you round the edges of
+   the pack lead image. */
+#main .card {
+  background: transparent;
+}
+    
+/* Adds rounded edges to the Lead Wolf, Featured Wolf, and sidebar wolf images.
+   For now, this level of selector specificity is necessary to grab the sidebar wolf
+   WITHOUT grabbing Melvin and I'm not sure why yet.*/
+a img.card-img-top, div#card-user.card div.card-body div.d-flex.justify-content-between.mb-3 div.w-50 a img, html body.theme_dark div.container div.row.justify-content-end div#main.col-lg-9.order-lg-2 table.table.table-striped.border-none.mt-3.mb-0 tbody tr td.row div.col-xl-3.col-sm-5.order-xl-12.order-4.text-center.text-break.featured-wolf a img {
+    border-radius: 13%;
+    border: solid 1px rgb(0, 0, 0);
+}
+    
+/* Sets info bar below pack lead photo to transparent w/ border. */
+html body.theme_dark div.container div.row.justify-content-end div#main.col-lg-9.order-lg-2 table.table.table-striped.border-none.mt-3.mb-0 tbody tr td.row div.col-xl-3.col-sm-7.text-center div.card.mb-3 div.card-body.pt-1.pb-1 {
+    background-color: transparent;
+    border: none;
+    }
+
+/* Sets the pack stats rows to transparent. */
+div#main.col-lg-9.order-lg-2 table.table.table-striped.border-none.mt-3.mb-0 tbody tr td.row div.col-xl-6.col-sm-12.order-xl-9.order-12 table.striped tbody tr {
+    background-color: transparent;
+}
+    
+/*
+---------------------------------------------------------
+PACK MECHANIC BUTTONS (IE. DYNASTY, BREEDING, ETC.)
+---------------------------------------------------------
+*/
+    
+/* Creates a border around the images of the buttons. */
+div.col-md-4.col-6.center a div.card.text-center img.card-img-top {
+    border-radius: 10px;
+    border: 1px solid black;
+    }
+
+/* Changes the text "footer" of the buttons. */
+div#denCards.form-row div.col-md-4.col-6.center a div.card.text-center div.card-header {
+    backdrop-filter: blur(1px); /* Blur strength, higher values blur more. */
+    background-color: rgba(0, 0, 0, .45);
+    /* Following 2 lines rounds the bottom of the footer so that it fits nicely inside the photo.
+    If you change the border size in the block above, you will need to edit these values as well. */
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+    
+/*
+---------------------------------------------------------
+PACK WOLVES TABLE, LIKE THE WHOLE SHIT FOR IT
+---------------------------------------------------------
+*/
+    
+/* Targets the table in a general fashion.  */
+table.table.table-striped  {
+    background-color: transparent;
+    border: solid black 1px;
+    }
+    
+/* Selects the table headers which is where your den names go! */
+html body.theme_dark div.container div.row.justify-content-end div#main.col-lg-9.order-lg-2 table.table.table-striped tbody tr th.top {
+    background-color: rgba(151, 105, 105, 0) !important;
+    border: solid black 1px;
+    }
+
+/* Selects the subheader for the den tables (Name, Stats, Info, Currents). 
+   !important; is necessary for this to function. */
+table.table.table-striped tbody tr.subheader.font-weight-bold td {
+    background-color: rgb(70, 70, 70, 0.4) !important;
+    border-bottom: solid black 1px;
+}
+ 
+/* Targets the even rows in the table. */
+/* NOTE: You CANNOT target the "even" rows of this table without targetting the pack info
+   box containing the Lead Wolf, Featured Wolf, stats, etc. It is NOT POSSIBLE. Both elements
+   SHARE the tbody selector; They are essentially in the same table. It's a fuckin' headache. */
+div#main.col-lg-9.order-lg-2 table.table.table-striped tbody tr:nth-child(even) {
+    background-color: rgba(137, 137, 137, .3);
+    }
+
+/* Targets the odd rows in a table.
+   NOTE: Same as above; You CANNOT target the "odd" rows in this table without targetting the
+   [title][wolf] bar in your pack info. It is just not possible. */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #0000004f;
+    }
+
+/* Manipulates the wolf portarits in the tables. */
+img.border-bottom {
+    max-width: 65px;
+    outline: solid 1px black;
+    padding: 0px !important;
+    }
+    
+html body.theme_dark div.container div.row.justify-content-end div#main.col-lg-9.order-lg-2 table.table.table-striped tbody tr.pup td {
+    vertical-align: middle;
+    }
+
+/* These 4 blocks colorize the progress bars for your wolves in this order:
+   Energy, Mood, Hunger, HP. Commented out bc I'm not changing their
+   colors atm.
+.bg-warning, .bg-success {
+        background-color: #eea236 !important;
+    }
+.bg-primary {
+        background-color: #385f71 !important;
+    }
+.bg-danger {
+        background-color: #d43f3a !important;
+    }
+.bg-info {
+        background-color: #046b9a !important;
+    }
+
+/* Selects all the progress bars for manipulation. */
+div.progress {
+    display: grid;
+    filter: saturate(65%);
+    margin-top: 2px;
+    border: solid 1px black;
+    }
+    
+/* Targets the sort menu at the bottom of each den. */
+html body.theme_dark div.container div.row.justify-content-end div#main.col-lg-9.order-lg-2 form table.table.table-striped tbody tr td.bottom {
+    background-color: rgba(137, 137, 137, .3);
+    border: solid black 1px;
+    }
+
+/* Targets the "Update" button fort sorting. */
+button.btn.btn-success {
+    background-color: #b7b7b7;
+    color: #535353;
+    font-weight: bold;
+    }
+    
+/*
+---------------------------------------------------------
+SIDEBAR
+---------------------------------------------------------
+*/
+
+/* Selects the sidebar in a general fashion. */
+div#sidebar {
+    background-color: rgba(0, 0, 0, 0.5);    
+    }
+    
+/* Selects the little sidebar windows. */
+#sidebar .card {
+    background-color: rgba(137, 137, 137, .3);
+    border: solid 1px black;
+    border-radius: 20px;
+    top: 15px;
+    }
+  
+/*
+---------------------------------------------------------
+BOTTOM OF PAGE SHIT / FOOTER
+---------------------------------------------------------
+*/
+
+/* Selects the "Create a Den", "Expand Territory" and "Add Immortal Slot" buttons. */
+div.card.mb-3 div.card-body,
+div.card-body.pl-1.pr-1,
+div.card.text-center div.card-body{
+    border: solid black 1px;
+    border-radius: 20px;
+    background-color: rgba(137, 137, 137, .3);
+    }
+}
